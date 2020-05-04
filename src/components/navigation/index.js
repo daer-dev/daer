@@ -24,16 +24,13 @@ class Navigation extends React.Component {
                 name: "Portfolio"
             },
             {
-                name: "Testimonials"
-            },
-            {
                 name: "Contact"
             }
         ]
     }
 
     navScroll(id, v) {
-        
+
         this.setState({show: false})
         const el = document.getElementById(id)
         scrollToElement(el, {
