@@ -30,13 +30,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/portfolio/`,
-        name: 'portfolio',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-netlify',
       options: {
         mergeSecurityHeaders: true,
