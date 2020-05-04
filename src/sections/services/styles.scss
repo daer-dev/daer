@@ -2,7 +2,7 @@
      background-color: #000;
      .row.top {
          display: flex;
-         min-height: 80%;
+         min-height: 100%;
          display: block;
          overflow: hidden;
          @media (max-width: 991px) {
@@ -28,10 +28,8 @@
              .services_container {
                display: flex;
                align-items: center;
-               
-               @media (max-width: 991px) {
-                    margin-top: 40px;
-               }
+               margin-top: 40px;
+
                .container {
                     max-width: 1400px;
                     overflow: hidden;
@@ -65,7 +63,7 @@
                          p {
                               font-family: Poppins;
                               color: #eee;
-                              font-size: 10px;
+                              font-size: 16px;
                               font-weight: 300;
                          }
                          &.border-side {
@@ -79,44 +77,5 @@
                }
           }
          }
-     }
-     .row.bottom {
-          min-height: 20%;
-          background-color: #251170;
-          display: flex;
-          .container {
-               display: flex;
-               align-items: center;
-               @media (max-width:991px) {
-                    display: block;
-               }
-               .counter_component {
-                    text-align: center;
-                    @media (max-width:991px) {
-                         padding: 20px;
-                    }
-                    .icon {
-                         color: #fff;
-                         font-size: 28px;
-                         height: 36px;
-                    }
-                    .value {
-                         span {
-                              color: #fff;
-                              font-size: 30px;
-                        }
-                        .symbol {
-                              position: absolute;
-                              font-size: 17px;
-                              color: #eb83f8;
-                        }
-                    }
-                    .text {
-                         color: #fff;
-                         font-size: 14px;
-                         line-height: 15px;
-                    }
-               }
-          }
      }
 }

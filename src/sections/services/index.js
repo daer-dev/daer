@@ -76,7 +76,6 @@ class Services extends React.Component {
             </Col>
           </div>
         </Row>
-        <Row className="bottom">{this.counters()}</Row>
       </section>
     )
   }
@@ -94,9 +93,7 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
@@ -109,9 +106,7 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
@@ -124,9 +119,7 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
@@ -139,9 +132,7 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
@@ -154,9 +145,7 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
@@ -169,66 +158,11 @@ class Services extends React.Component {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
-                In et sem libero. Integer pretium, tellus eu pellentesque
-                tristique, ex libero maximus elit, mollis tristique urna eros
-                non tellus
+                In et sem libero.
               </p>
             </AnimationContainer>
           </Col>
         </Row>
-      )
-    }
-  }
-
-  counters() {
-    if (this.state.show || this.context.height === 'auto') {
-      return (
-        <Container>
-          <Col md={3}>
-            <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter
-                icon={faSmileBeam}
-                value={100}
-                text="Happy Clients"
-                symbol="+"
-                duration={3}
-              />
-            </AnimationContainer>
-          </Col>
-          <Col md={3}>
-            <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter
-                icon={faPizzaSlice}
-                value={1000}
-                text="Pizzas Ordered"
-                symbol="+"
-                duration={3}
-              />
-            </AnimationContainer>
-          </Col>
-          <Col md={3}>
-            <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter
-                icon={faQuoteRight}
-                value={500}
-                text="Reviews"
-                symbol="+"
-                duration={3}
-              />
-            </AnimationContainer>
-          </Col>
-          <Col md={3}>
-            <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter
-                icon={faCode}
-                value={50000}
-                text="Lines of Code"
-                symbol="+"
-                duration={3}
-              />
-            </AnimationContainer>
-          </Col>
-        </Container>
       )
     }
   }
