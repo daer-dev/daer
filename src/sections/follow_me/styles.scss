@@ -1,4 +1,4 @@
-.services {
+.follow_me {
      background-color: #000;
      .row.top {
          display: flex;
@@ -25,18 +25,29 @@
                     line-height: 40px;
                }
              }
-             .services_container {
+             p {
+               font-family: Poppins;
+               color: #eee;
+               font-size: 16px;
+               font-weight: 300;
+             }
+             .intro {
+               margin-bottom: 40px;
+             }
+             .social-media-container {
                display: flex;
-               align-items: center;
-               margin-top: 20px;
+               justify-content: center;
+               flex-direction: column;
+               margin-top: 40px;
 
                .container {
                     max-width: 1400px;
                     overflow: hidden;
+
                     .row {
                          overflow: hidden;
                     }
-                    .service {
+                    .social-media {
                          text-align: center;
                          margin: 20px 0px;
                          padding: 0 40px;
@@ -44,34 +55,36 @@
                               padding: 0;
                               margin-bottom: 50px;
                          }
-                         @media (max-width: 1300px) {
-                              padding: 0 10px;
-                         }
-                         .icon svg {
-                              font-size: 50px;
-                              color: #eb83f8;
-                              &.solid {
-                                   font-size: 40px !important;
-                              }
-                         }
-                         h4 {
-                              color: #fff;
-                              font-family: Poppins;
-                              margin: 15px 0px 9px 0px;
-                              font-size: 20px;
-                         }
-                         p {
-                              font-family: Poppins;
-                              color: #eee;
-                              font-size: 16px;
-                              font-weight: 300;
-                         }
                          &.border-side {
                               border-left: 1px solid #251170;
                               border-right: 1px solid #251170;
                               @media (max-width: 991px) {
                                    border: none;
                               }
+                         }
+                         a {
+                              &:hover,
+                              &:active,
+                              &:focus {
+                                   text-decoration: none;
+                              }
+                              .icon svg {
+                                   font-size: 50px;
+                                   color: #eb83f8;
+                                   &.solid {
+                                        font-size: 40px !important;
+                                   }
+                              }
+                              h4 {
+                                   color: #fff;
+                                   font-family: Poppins;
+                                   margin: 15px 0px 9px 0px;
+                                   font-size: 20px;
+                              }
+                         }
+
+                         p {
+                              margin-top: 25px
                          }
                     }
                }

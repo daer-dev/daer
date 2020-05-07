@@ -4,11 +4,13 @@ import Navigation from 'components/navigation'
 import ScrollLock from 'react-scrolllock'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'scss/retro.scss'
+
 var scrollToElement = require('scroll-to-element')
 
 class Layout extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       height: 0,
       mobile: false,
@@ -18,7 +20,7 @@ class Layout extends React.Component {
     this.sections = [
       'home',
       'about',
-      'services',
+      'follow_me',
       'contact',
     ]
     this.section_id = 0
@@ -30,9 +32,12 @@ class Layout extends React.Component {
     if (this.state.width !== window.innerWidth) {
       window.location.reload()
     }
+
     this.setState({ height: window.innerHeight, width: window.innerWidth })
+
     if (window.innerWidth < 1025) {
       this.setState({ scrolllock: false })
+
       if (window.innerWidth < 992) {
         this.setState({ mobile: true })
       }

@@ -5,7 +5,7 @@ import Layout from 'components/layout'
 import Spinner from 'components/spinner'
 import Hero from 'sections/hero'
 import About from 'sections/about'
-import Services from 'sections/services'
+import FollowMe from 'sections/follow_me'
 import Contact from 'sections/contact'
 
 class HomePage extends React.Component {
@@ -21,7 +21,7 @@ class HomePage extends React.Component {
         <Layout>
             <Hero id="home" />
             <About id="about" />
-            <Services id="services" />
+            <FollowMe id="follow_me" />
             <Contact id="contact" />
         </Layout>
         <Spinner duration={1000} />
