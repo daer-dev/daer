@@ -53,6 +53,13 @@
             @media (max-width: 767px) {
                 padding: 30px 50px 50px 50px;
             }
+            p {
+                color: #eee;
+                font-family: Poppins;
+                font-size: 14px;
+                margin-top: 20px;
+                font-weight: 300;
+            }
             .form-container {
                 margin-top: 20px;
                 input,textarea {
@@ -72,15 +79,6 @@
                         border-bottom: 1px solid red;
                     }
                 }
-            }
-        }
-        .map {
-            padding: 0;
-            iframe {
-                border: none;
-            }
-            @media (max-width: 991px) {
-                margin-top: 50px;
             }
         }
     }

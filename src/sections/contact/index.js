@@ -3,6 +3,8 @@ import './styles.scss'
 import { Row, Col } from 'react-bootstrap'
 import AnimationContainer from 'components/animation-container'
 import BaffleText from 'components/baffle-text'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import ThemeContext from '../../context'
 
 class Contact extends React.Component {
@@ -40,6 +42,7 @@ class Contact extends React.Component {
             this.setState({error: false})
         }
     }
+
     render() {
         return (
             <section id={`${this.props.id}`} className="contact" style={{height: this.context.height}}>
@@ -49,11 +52,8 @@ class Contact extends React.Component {
                             <BaffleText text="Contact" revealDuration={500} revealDelay={500} parentMethod={this.show} callMethodTime={1100} />
                         </h2>
                     </Col>
-                    <Col md={5} className="form">
+                    <Col md={10} className="form">
                         {this.form()}
-                    </Col>
-                    <Col md={5} className="map">
-                        {this.map()}
                     </Col>
                 </Row>
             </section>
@@ -67,6 +67,7 @@ class Contact extends React.Component {
                 <div className="form-container">
                     <div className="line-text">
                         <h4>Get In Touch</h4>
+                        <p>Lorem ipsum dolor sit amet.</p>
                         <AnimationContainer delay={50} animation="fadeInUp fast">
                             <div className="form-group">
                                 <input type="text" className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({name: e.target.value})} />
@@ -100,17 +101,6 @@ class Contact extends React.Component {
             )
         }
     }
-
-    map() {
-        if (this.state.show || this.context.height === "auto") {
-            return (
-                <AnimationContainer delay={1000} animation="fadeIn fast" height={this.context.height}>
-                    <iframe title="map" width="100%" height="100%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"/>
-                </AnimationContainer>
-            )
-        }
-    }
-
 }
 
 export default Contact
