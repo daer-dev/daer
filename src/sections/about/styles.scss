@@ -8,7 +8,7 @@
         min-height: 100%;
         position: absolute;
         top: 0;
-        padding: 0;
+        padding: 3%;
         @media (max-width:991px) {
             flex-wrap: wrap;
             position: inherit;
@@ -17,7 +17,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding: 5%;
+            padding: 2%;
             h3 {
                 color: #fff;
                 font-family: Poppins;
@@ -37,55 +37,16 @@
             p {
                 color: #eee;
                 font-family: Poppins;
-                font-size: 14px;
+                font-size: 15px;
                 margin-top: 20px;
                 font-weight: 300;
-            }
-            .social_icons {
-                .social_icon {
-                    font-size: 15px;
-                    color: #fff;
-                    margin-right: 10px;
-                    transition: .2s;
-                    cursor: pointer;
-                    &:hover {
-                        color: #eb83f8;
-                    }
-                }
-            }
-        }
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 5%;
-            background-color: #251170;
-            @media (max-width:991px) {
-                width: 100%;
-            }
-            h5 {
-                font-family: Poppins;
-                font-weight: 700;
-                color: #fff;
-                font-size: 40px;
-                margin-bottom: 0;
-            }
-            .separator {
-                margin: 20px 0;
-            }
-            .skills-container {
-                max-width: 80%;
-                @media (max-width: 991px) {
-                    max-width: 100%;
-                    margin-top: 20px;
-                }
             }
         }
     }
     .particles {
         position: absolute;
         height: 100%;
-        width: 50%;
+        width: 100%;
         @media (max-width: 991px) {
             width: 100%;
         }
