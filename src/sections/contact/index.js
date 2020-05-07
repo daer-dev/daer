@@ -3,8 +3,6 @@ import './styles.scss'
 import { Row, Col } from 'react-bootstrap'
 import AnimationContainer from 'components/animation-container'
 import BaffleText from 'components/baffle-text'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import ThemeContext from '../../context'
 
 class Contact extends React.Component {

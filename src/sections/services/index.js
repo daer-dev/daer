@@ -7,13 +7,8 @@ import { faReact, faAngular, faAws } from '@fortawesome/free-brands-svg-icons'
 import {
   faPencilRuler,
   faServer,
-  faRobot,
-  faSmileBeam,
-  faPizzaSlice,
-  faQuoteRight,
-  faCode,
+  faRobot
 } from '@fortawesome/free-solid-svg-icons'
-import Counter from 'components/counter'
 import ThemeContext from '../../context'
 import './styles.scss'
 
