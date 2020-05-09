@@ -15,16 +15,20 @@ class Navigation extends React.Component {
 
     this.sections = [
       {
-        name: "Home"
+        name:      "Home",
+        css_class: "home"
       },
       {
-        name: "About"
+        name:      "About",
+        css_class: "about"
       },
       {
-        name: "Follow Me"
+        name:      "Follow Me",
+        css_class: "follow_me"
       },
       {
-        name: "Contact"
+        name:      "Contact",
+        css_class: "contact"
       }
     ]
   }
@@ -68,16 +72,12 @@ class Navigation extends React.Component {
     return this.sections.map((section, index) => {
       return (
         <li key={index}>
-          <button onClick={() => this.navScroll(this.section_class(section), index)}>
+          <button onClick={() => this.navScroll(section.css_class, index)}>
             {section.name}
           </button>
         </li>
       )
     })
-  }
-
-  section_class(section) {
-    section.name.replace(' ', '_').toLowerCase()
   }
 }
 

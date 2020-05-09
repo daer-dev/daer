@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from 'components/layout'
-import Spinner from 'components/spinner'
-import Hero from 'sections/hero'
-import About from 'sections/about'
-import FollowMe from 'sections/follow_me'
-import Contact from 'sections/contact'
+import Spinner from 'components/vendor/spinner'
+import Hero from 'components/hero'
+import About from 'components/about'
+import FollowMe from 'components/follow_me'
+import Contact from 'components/contact'
 
 class HomePage extends React.Component {
 

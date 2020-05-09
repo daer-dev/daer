@@ -4,6 +4,7 @@ import './styles.scss'
 class Spinner extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       spin: true,
     }
@@ -11,6 +12,7 @@ class Spinner extends React.Component {
 
   componentDidMount() {
     const { duration } = this.props
+
     this.showSpinner(duration).then(() => {
       setTimeout(() => {
         document.getElementById('spinner').remove()

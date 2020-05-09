@@ -71,6 +71,7 @@ class Layout extends React.Component {
   wheel(e) {
     if (!this.scrolling && !this.state.mobile) {
       this.scrolling = true
+
       if (e.deltaY < 0) {
         if (
           this.sections[
@@ -83,7 +84,9 @@ class Layout extends React.Component {
         if (this.section_id !== this.sections.length - 1)
           this.section_id = (this.section_id + 1) % this.sections.length
       }
+
       const el = document.getElementById(this.sections[this.section_id])
+
       scrollToElement(el, {
         offset: 0,
         ease: 'in-out-expo',
@@ -96,6 +99,7 @@ class Layout extends React.Component {
 
   render() {
     const { children } = this.props
+
     return (
       <ThemeProvider
         value={{ height: this.state.mobile ? 'auto' : this.state.height }}

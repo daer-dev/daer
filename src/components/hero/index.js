@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.scss'
 import { StaticQuery, graphql } from 'gatsby'
 import { Row, Col } from 'react-bootstrap'
-import Glitch from 'components/glitch'
+import Glitch from 'components/vendor/glitch'
 import Typewriter from 'typewriter-effect'
 import ThemeContext from '../../context'
 
@@ -13,31 +13,42 @@ class Hero extends React.Component {
     return (
       <section id={`${this.props.id}`} className="hero" style={ { height: this.context.height } }>
         <Row>
-          <Col md={6} className="content">
-            <div className="content-text">
-              <div className="line-text">
-                <h4>Hello, I 'm</h4>
-              </div>
-              <Glitch text="Daniel Herrero" />
-              <Typewriter options = {
-                {
-                  strings: [
-                    '- Backend dev',
-                    '- IT Manager',
-                    '- Devops',
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }
-              } />
-            </div>
-            { this.icons() }
+          <Col md={6} className="profile">
+            {this.profile()}
           </Col>
+
           <Col md={6} className="img">
-            <img src={this.props.mainImg.childImageSharp.fluid.src} alt="person" />
+            {this.image()}
           </Col>
         </Row>
       </section>
+    )
+  }
+
+  profile() {
+    return (
+      <React.Fragment>
+        <div className="content-text">
+          <div className="line-text">
+            <h4>Hello, I 'm</h4>
+          </div>
+          <Glitch text="Daniel Herrero" />
+
+          <Typewriter options = {
+            {
+              strings: [
+                '- Backend dev',
+                '- IT Manager',
+                '- Devops',
+              ],
+              autoStart: true,
+              loop: true,
+            }
+          } />
+        </div>
+
+        { this.icons() }
+      </React.Fragment>
     )
   }
 
@@ -63,6 +74,12 @@ class Hero extends React.Component {
         />
       )
     })
+  }
+
+  image() {
+    return (
+      <img src={this.props.mainImg.childImageSharp.fluid.src} alt="person" />
+    )
   }
 }
 
