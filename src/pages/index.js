@@ -9,9 +9,9 @@ import FollowMe from 'components/follow_me'
 import Contact from 'components/contact'
 
 class HomePage extends React.Component {
-
   render() {
     const { site } = this.props.data
+
     return (
       <div>
         <Helmet>
@@ -19,10 +19,10 @@ class HomePage extends React.Component {
           <meta name="description" content={site.meta.description} />
         </Helmet>
         <Layout>
-            <Hero id="home" />
-            <About id="about" />
-            <FollowMe id="follow_me" />
-            <Contact id="contact" />
+          <Hero id="home" />
+          <About id="about" />
+          <FollowMe id="follow_me" />
+          <Contact id="contact" />
         </Layout>
         <Spinner duration={1000} />
       </div>
