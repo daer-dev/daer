@@ -11,5 +11,6 @@ services:
     ports:
       - '8000:8000'
     volumes:
-     - .:/app
-     - /app/node_modules/
+      - .:/app
+      # We keep the Gatsby modules installed in the build phase and symlink the new ones in every run via entrypoint.
+      - /app/node_modules/

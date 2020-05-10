@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Daer',
-    description:
-      'Personal website of Daniel Herrero.',
+    title: 'daer',
+    description: 'Personal website of Daniel Herrero.',
   },
   pathPrefix: '/',
   plugins: [
