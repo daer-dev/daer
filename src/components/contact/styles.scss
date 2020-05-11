@@ -1,7 +1,7 @@
 .contact {
   background-color: #000;
 
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     margin-top: 40px;
   }
 
@@ -12,7 +12,7 @@
     min-height: 100%;
     padding: 0;
 
-    @media (max-width:911px) {
+    @media (max-width: 911px) {
       display: block;
     }
 
@@ -39,7 +39,7 @@
         }
       }
 
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         height: 100px;
         width: 100%;
 

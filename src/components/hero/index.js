@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Row, Col } from 'react-bootstrap'
 import Glitch from 'components/vendor/glitch'
 import Typewriter from 'typewriter-effect'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import ThemeContext from '../../context'
 import Text from './text.yml'
 
@@ -14,12 +16,10 @@ class Hero extends React.Component {
     return (
       <section id={`${this.props.id}`} className="hero" style={ { height: this.context.height } }>
         <Row>
-          <Col md={6} className="profile">
+          <Col md={12} className="profile">
             {this.profile()}
-          </Col>
-
-          <Col md={6} className="img">
-            {this.image()}
+            {this.scroll_indicator()}
+            {this.icons()}
           </Col>
         </Row>
       </section>
@@ -43,8 +43,6 @@ class Hero extends React.Component {
             }
           } />
         </div>
-
-        { this.icons() }
       </React.Fragment>
     )
   }
@@ -73,9 +71,11 @@ class Hero extends React.Component {
     })
   }
 
-  image() {
+  scroll_indicator() {
     return (
-      <img src={this.props.mainImg.childImageSharp.fluid.src} alt="person" />
+      <div class="scroll-indicator content-text hidden-xs">
+        {Text.scroll_indicator} <FontAwesomeIcon icon={faArrowDown} />
+      </div>
     )
   }
 }
@@ -101,20 +101,9 @@ export default props => (
             }
           }
         }
-        Img: file(relativePath: { eq: "person.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2000) {
-              src
-            }
-          }
-        }
       }
     `
   }
-  render = {
-    ({ icons, Img }) => <Hero icons={icons}
-    mainImg={Img} {...props}
-    />
-  }
+  render = { ({ icons }) => <Hero icons={icons} {...props} /> }
   />
 )
