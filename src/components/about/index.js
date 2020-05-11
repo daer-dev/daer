@@ -3,6 +3,7 @@ import Particles from 'react-particles-js'
 import { Row, Col } from 'react-bootstrap'
 import ThemeContext from '../../context'
 import './styles.scss'
+import Text from './text.yml'
 
 class Hero extends React.Component {
   static contextType = ThemeContext
@@ -58,9 +59,9 @@ class Hero extends React.Component {
     return (
       <div>
         <div className="line-text">
-          <h4>About Me</h4>
+          <h4>{Text.title}</h4>
         </div>
-        <h3>I'm a Full Stack web developer working remotely</h3>
+        <h3>{Text.subtitle}</h3>
         <div className="separator" />
       </div>
     )
@@ -69,7 +70,7 @@ class Hero extends React.Component {
   first_page() {
     return (
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit nisi vitae feugiat vestibulum. Aliquam porta nulla vel odio scelerisque, pretium volutpat dui euismod. Integer porttitor dolor placerat malesuada dictum. Fusce enim dolor, dignissim quis ornare at, elementum nec turpis. Donec ac interdum libero, sed condimentum lectus. Nunc nec iaculis tortor. Donec interdum sollicitudin eros in pharetra. Donec ultricies laoreet dictum. Maecenas vestibulum sodales justo, id hendrerit orci aliquet gravida. Nulla facilisi.</p>
+        <p>{Text.first_page.first_paragraph}</p>
       </div>
     )
   }
@@ -77,8 +78,8 @@ class Hero extends React.Component {
   second_page() {
     return (
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit nisi vitae feugiat vestibulum. Aliquam porta nulla vel odio scelerisque, pretium volutpat dui euismod. Integer porttitor dolor placerat malesuada dictum. Fusce enim dolor, dignissim quis ornare at, elementum nec turpis. Donec ac interdum libero, sed condimentum lectus. Nunc nec iaculis tortor. Donec interdum sollicitudin eros in pharetra. Donec ultricies laoreet dictum. Maecenas vestibulum sodales justo, id hendrerit orci aliquet gravida. Nulla facilisi.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit nisi vitae feugiat vestibulum. Aliquam porta nulla vel odio scelerisque, pretium volutpat dui euismod. Integer porttitor dolor placerat malesuada dictum. Fusce enim dolor, dignissim quis ornare at, elementum nec turpis. Donec ac interdum libero, sed condimentum lectus. Nunc nec iaculis tortor. Donec interdum sollicitudin eros in pharetra. Donec ultricies laoreet dictum. Maecenas vestibulum sodales justo, id hendrerit orci aliquet gravida. Nulla facilisi.</p>
+        <p>{Text.second_page.first_paragraph}</p>
+        <p>{Text.second_page.second_paragraph}</p>
       </div>
     )
   }

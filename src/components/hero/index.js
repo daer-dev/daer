@@ -5,6 +5,7 @@ import { Row, Col } from 'react-bootstrap'
 import Glitch from 'components/vendor/glitch'
 import Typewriter from 'typewriter-effect'
 import ThemeContext from '../../context'
+import Text from './text.yml'
 
 class Hero extends React.Component {
   static contextType = ThemeContext
@@ -30,17 +31,13 @@ class Hero extends React.Component {
       <React.Fragment>
         <div className="content-text">
           <div className="line-text">
-            <h4>Hello, I 'm</h4>
+            <h4>{Text.intro}</h4>
           </div>
-          <Glitch text="Daniel Herrero" />
+          <Glitch text={Text.name} />
 
           <Typewriter options = {
             {
-              strings: [
-                '- Backend dev',
-                '- IT Manager',
-                '- Devops',
-              ],
+              strings: Text.subtitles.map((data, index) => { return "# ".concat(data) }),
               autoStart: true,
               loop: true,
             }

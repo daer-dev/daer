@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
+import Text from './text.yml'
 
 var scrollToElement = require('scroll-to-element')
 
@@ -15,19 +16,19 @@ class Navigation extends React.Component {
 
     this.sections = [
       {
-        name:      "Home",
+        name:      Text.sections.home,
         css_class: "home"
       },
       {
-        name:      "About",
+        name:      Text.sections.about,
         css_class: "about"
       },
       {
-        name:      "Follow Me",
+        name:       Text.sections.follow_me,
         css_class: "follow_me"
       },
       {
-        name:      "Contact",
+        name:      Text.sections.contact,
         css_class: "contact"
       }
     ]

@@ -4,6 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import AnimationContainer from 'components/vendor/animation-container'
 import BaffleText from 'components/vendor/baffle-text'
 import ThemeContext from '../../context'
+import Text from './text.yml'
 
 class Contact extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Contact extends React.Component {
           <Col md={2} className="side">
             <h2>
               <BaffleText
-                text="Contact"
+                text={Text.title}
                 revealDuration={500}
                 revealDelay={500}
                 parentMethod={this.show}
@@ -76,7 +77,7 @@ class Contact extends React.Component {
         return (
           <React.Fragment>
             <div className="line-text">
-              <h4>Get In Touch</h4>
+              <h4>{Text.subtitle}</h4>
             </div>
           </React.Fragment>
         )
@@ -86,7 +87,7 @@ class Contact extends React.Component {
     intro() {
       if (this.state.show || this.context.height === "auto") {
         return (
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p>{Text.intro}</p>
         )
       }
     }
@@ -97,32 +98,32 @@ class Contact extends React.Component {
           <React.Fragment>
             <AnimationContainer delay={50} animation="fadeInUp fast">
               <div className="form-group">
-                <input type="text" className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({name: e.target.value})} />
+                <input type="text" className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder={Text.form.name} onChange={e => this.setState({name: e.target.value})} />
               </div>
             </AnimationContainer>
 
             <AnimationContainer delay={100} animation="fadeInUp fast">
               <div className="form-group">
-                <input type="text" className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({email: e.target.value})} />
+                <input type="text" className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder={Text.form.email} onChange={e => this.setState({email: e.target.value})} />
               </div>
             </AnimationContainer>
 
             <AnimationContainer delay={150} animation="fadeInUp fast">
               <div className="form-group">
-                <input type="text" className="phone" placeholder="Phone" onChange={e => this.setState({phone: e.target.value})} />
+                <input type="text" className="phone" placeholder={Text.form.phone} onChange={e => this.setState({phone: e.target.value})} />
               </div>
             </AnimationContainer>
 
             <AnimationContainer delay={200} animation="fadeInUp fast">
               <div className="form-group">
-                <textarea className={`message ${this.check(this.state.message) ? "" : "error"}`} placeholder="Message" onChange={e => this.setState({message: e.target.value})}></textarea>
+                <textarea className={`message ${this.check(this.state.message) ? "" : "error"}`} placeholder={Text.form.message} onChange={e => this.setState({message: e.target.value})}></textarea>
               </div>
             </AnimationContainer>
 
             <AnimationContainer delay={250} animation="fadeInUp fast">
               <div className="submit">
                 <button className={`hover-button ${this.state.error ? "error" : ""}`} onClick={() => this.submit()}>
-                  <span>Send Message</span>
+                  <span>{Text.form.submit}</span>
                 </button>
               </div>
             </AnimationContainer>

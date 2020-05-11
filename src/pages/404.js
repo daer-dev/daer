@@ -2,21 +2,20 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import 'scss/retro.scss'
+import Text from './404/text.yml'
 
 class page404 extends React.Component {
   render() {
     return(
       <div>
         <Helmet>
-          <title>Error : 404</title>
+          <title>{Text.title}</title>
         </Helmet>
         <div className="error-404">
           <div>
-            <h1>404</h1>
-            <h2>The page you are looking for could not be found</h2>
-            <Link to="/">
-              Home
-            </Link>
+            <h1>{Text.title}</h1>
+            <h2>{Text.body}</h2>
+            <Link to="/">{Text.home_link}</Link>
           </div>
         </div>
       </div>
