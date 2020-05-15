@@ -3,7 +3,7 @@ SHELL:=/bin/bash
 .DEFAULT_GOAL:=help
 
 # Commands to be shown when running "make help".
-.PHONY: help install start conn prune
+.PHONY: help install start conn npm build deploy
 
 help:  ## Displays this help.
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
@@ -24,3 +24,11 @@ conn: ## Connects to the web container.
 npm:  ## Checks and install new NPM packages.
 	$(info Checking and installing NPM packages...)
 	@docker-compose run --rm web npm install
+
+build:  ## Builds the compiled version of the site in /public.
+	$(info Building web...)
+	@docker-compose run --rm web npm run build
+
+deploy:  ## Deploys the master branch to Github Pages.
+	$(info Deploying master branch to Github Pages...)
+	@docker-compose run --rm web npm run deploy
