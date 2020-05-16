@@ -17,6 +17,7 @@ class HomePage extends React.Component {
         <Helmet>
           <title>{site.meta.title}</title>
           <meta name="description" content={site.meta.description} />
+          <script>{typeof window !== 'undefined' && window.history.pushState("", "", "/")}</script>
         </Helmet>
         <Layout>
           <Hero id="home" />
