@@ -31,4 +31,6 @@ build:  ## Builds the compiled version of the site in /public.
 
 deploy:  ## Deploys the master branch to Github Pages.
 	$(info Deploying master branch to Github Pages...)
-	@docker-compose run --rm web npm run deploy
+	@docker-compose run --rm web git config --global user.name "$(git config user.name)" && \
+	                             git config --global user.email "$(git config user.email)" && \
+															 npm run deploy

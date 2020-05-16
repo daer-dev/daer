@@ -73,7 +73,7 @@ class Hero extends React.Component {
 
   scroll_indicator() {
     return (
-      <div class="scroll-indicator content-text hidden-xs">
+      <div className="scroll-indicator content-text hidden-xs">
         {Text.scroll_indicator} <FontAwesomeIcon icon={faArrowDown} />
       </div>
     )

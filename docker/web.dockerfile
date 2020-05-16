@@ -11,4 +11,6 @@ RUN mkdir node_modules && npm install
 # Gets a clean image with "gatsby-cli" and the pre-built node modules.
 FROM node:12-alpine
 RUN npm install --global gatsby-cli && gatsby telemetry --disable && mkdir /save
+# Installs Git and OpenSSH to be able to deploy with Github Pages.
+RUN apk update && apk add git openssh-client
 COPY --from=builder /app/node_modules /save/node_modules

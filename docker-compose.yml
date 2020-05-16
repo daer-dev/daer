@@ -17,3 +17,8 @@ services:
     volumes:
       - .:/app
       - node_modules:/app/node_modules/
+      # SSH files to communicate with the outer world within the web container (necessary to deploy to Github Pages).
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub
+      - ~/.ssh/known_hosts:/root/.ssh/known_hosts
+      - ~/.ssh/authorized_keys:/root/.ssh/authorized_keys

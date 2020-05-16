@@ -10,3 +10,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+// Comment originally meant to be in "package.json", but placed here as JSON files don't admit comments:
+//   * We delete the cache of "gh-pages" to avoid the following issue:
+//       https://github.com/tschaub/gh-pages/issues/27#issuecomment-273337811
