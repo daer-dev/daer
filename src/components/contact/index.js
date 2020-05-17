@@ -1,22 +1,23 @@
-import React from 'react'
-import './styles.scss'
-import { Row, Col } from 'react-bootstrap'
-import AnimationContainer from 'components/vendor/animation-container'
-import BaffleText from 'components/vendor/baffle-text'
-import ThemeContext from '../../context'
-import Text from './text.yml'
+import React from "react"
+import "./styles.scss"
+import { Row, Col } from "react-bootstrap"
+import AnimationContainer from "components/vendor/animation-container"
+import BaffleText from "components/vendor/baffle-text"
+import ThemeContext from "../../context"
+import Text from "./text.yml"
 
 class Contact extends React.Component {
   constructor(props) {
     super(props)
 
+    this.submitUrl = "https://formspree.io/mqkyeayy"
+    this.validateForm = this.validateForm.bind(this)
     this.state = {
-      name:    "",
-      email:   "",
-      phone:   "",
+      name: "",
+      email: "",
       message: "",
-      error:   false,
-      show:    false
+      formStatus: "",
+      show: false
     }
     this.show = this.show.bind(this)
   }
@@ -24,23 +25,7 @@ class Contact extends React.Component {
   static contextType = ThemeContext
 
   show() {
-    this.setState({ show : true })
-  }
-
-  check(val) {
-    if (this.state.error && val === "") {
-      return false
-    } else {
-      return true
-    }
-  }
-
-  submit() {
-    if (this.state.name === "" || this.state.email === "" || this.state.message === "") {
-      this.setState({ error: true })
-    } else {
-      this.setState({ error: false })
-    }
+    this.setState({ show: true })
   }
 
   render() {
@@ -72,65 +57,147 @@ class Contact extends React.Component {
     )
   }
 
-    title() {
-      if (this.state.show || this.context.height === "auto") {
-        return (
-          <React.Fragment>
-            <div className="line-text">
-              <h4>{Text.subtitle}</h4>
+  title() {
+    if (this.state.show || this.context.height === "auto") {
+      return (
+        <React.Fragment>
+          <div className="line-text">
+            <h4>{Text.subtitle}</h4>
+          </div>
+        </React.Fragment>
+      )
+    }
+  }
+
+  intro() {
+    if (this.state.show || this.context.height === "auto") {
+      return (
+        <p>{Text.intro}</p>
+      )
+    }
+  }
+
+  form() {
+    let content
+
+    if (this.state.show || this.context.height === "auto") {
+      if (this.state.formStatus === "SUCCESS") {
+        content = this.successMessage()
+      } else {
+        content = <form
+          onSubmit={this.validateForm}
+          action={this.submitUrl}
+          method="POST"
+        >
+          <AnimationContainer delay={50} animation="fadeInUp fast">
+            <div className="form-group">
+              <input type="text" name="name" className={this.fieldClass(this.state.name)} placeholder={Text.form.name} onChange={e => this.setState({ name: e.target.value })} />
             </div>
-          </React.Fragment>
-        )
+          </AnimationContainer>
+
+          <AnimationContainer delay={100} animation="fadeInUp fast">
+            <div className="form-group">
+              <input type="text" name="email" className={this.fieldClass(this.state.email)} placeholder={Text.form.email} onChange={e => this.setState({ email: e.target.value })} />
+            </div>
+          </AnimationContainer>
+
+          <AnimationContainer delay={150} animation="fadeInUp fast">
+            <div className="form-group">
+              <textarea name="message" className={this.fieldClass(this.state.message)} placeholder={Text.form.message} onChange={e => this.setState({ message: e.target.value })}></textarea>
+            </div>
+          </AnimationContainer>
+
+          {this.submitButton()}
+
+          {this.errorMessage()}
+        </form>
       }
+
+      return(content)
+    }
+  }
+
+  submitButton() {
+    return (
+      <AnimationContainer delay={200} animation="fadeInUp fast">
+        <div className="submit">
+          <button className={`hover-button ${this.state.formStatus === "VALIDATION_ERROR" ? "error" : ""}`}>
+            <span>{Text.form.submit}</span>
+          </button>
+        </div>
+      </AnimationContainer>
+    )
+  }
+
+  successMessage() {
+    return(
+      <p className="message success">{Text.messages.success}</p>
+    )
+  }
+
+  errorMessage() {
+    let content
+
+    if (this.state.formStatus === "REQUEST_ERROR") {
+      content = Text.messages.error.request
+    } else if (this.state.formStatus === "VALIDATION_ERROR") {
+      content = Text.messages.error.validation
     }
 
-    intro() {
-      if (this.state.show || this.context.height === "auto") {
-        return (
-          <p>{Text.intro}</p>
-        )
-      }
+    if (typeof content !== "undefined" && content !== "") {
+      return (
+        <AnimationContainer delay={250} animation="fadeInUp fast">
+          <p className="message error">{content}</p>
+        </AnimationContainer>
+      )
+    }
+  }
+
+  fieldClass(fieldValue) {
+    // Fields validation should be just in one place.
+    if (this.state.formStatus === "VALIDATION_ERROR" && fieldValue === "") {
+      return "error"
+    } else {
+      return ""
+    }
+  }
+
+  validateForm(event) {
+    event.preventDefault()
+
+    // TODO: Email's format should be validated.
+    if (this.state.name === "" || this.state.email === "" || this.state.message === "") {
+      this.setState({ formStatus: "VALIDATION_ERROR" })
+    } else {
+      this.setState({ formStatus: "" })
+      this.submitForm(event.target)
+    }
+  }
+
+  submitForm(form) {
+    const data = new FormData(form)
+    const xhr = new XMLHttpRequest()
+
+    console.log("Sending the following data to \"" + form.action + "\":")
+    for (var pair of data.entries()) {
+      console.log(pair[0]+ ": " + pair[1])
     }
 
-    form() {
-      if (this.state.show || this.context.height === "auto") {
-        return (
-          <React.Fragment>
-            <AnimationContainer delay={50} animation="fadeInUp fast">
-              <div className="form-group">
-                <input type="text" className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder={Text.form.name} onChange={e => this.setState({name: e.target.value})} />
-              </div>
-            </AnimationContainer>
+    xhr.open(form.method, form.action)
+    xhr.setRequestHeader("Accept", "application/json")
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
 
-            <AnimationContainer delay={100} animation="fadeInUp fast">
-              <div className="form-group">
-                <input type="text" className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder={Text.form.email} onChange={e => this.setState({email: e.target.value})} />
-              </div>
-            </AnimationContainer>
-
-            <AnimationContainer delay={150} animation="fadeInUp fast">
-              <div className="form-group">
-                <input type="text" className="phone" placeholder={Text.form.phone} onChange={e => this.setState({phone: e.target.value})} />
-              </div>
-            </AnimationContainer>
-
-            <AnimationContainer delay={200} animation="fadeInUp fast">
-              <div className="form-group">
-                <textarea className={`message ${this.check(this.state.message) ? "" : "error"}`} placeholder={Text.form.message} onChange={e => this.setState({message: e.target.value})}></textarea>
-              </div>
-            </AnimationContainer>
-
-            <AnimationContainer delay={250} animation="fadeInUp fast">
-              <div className="submit">
-                <button className={`hover-button ${this.state.error ? "error" : ""}`} onClick={() => this.submit()}>
-                  <span>{Text.form.submit}</span>
-                </button>
-              </div>
-            </AnimationContainer>
-          </React.Fragment>
-        )
+      if (xhr.status === 200) {
+        form.reset()
+        this.setState({ formStatus: "SUCCESS" })
+      } else {
+        this.setState({ formStatus: "REQUEST_ERROR" })
+        console.log(xhr.responseText)
       }
     }
+    xhr.send(data)
+  }
 }
 
 export default Contact

@@ -148,7 +148,7 @@ a:active {
   span {
     &:before,
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 10px;
       height: 10px;
@@ -173,7 +173,7 @@ a:active {
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 10px;

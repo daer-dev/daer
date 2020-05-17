@@ -1,5 +1,5 @@
-import React from 'react'
-import './styles.scss'
+import React from "react"
+import "./styles.scss"
 
 class Spinner extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Spinner extends React.Component {
 
     this.showSpinner(duration).then(() => {
       setTimeout(() => {
-        document.getElementById('spinner').remove()
+        document.getElementById("spinner").remove()
       }, 500)
     })
   }
@@ -24,7 +24,7 @@ class Spinner extends React.Component {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         this.setState({ spin: false })
-        document.body.classList.remove('no-overflow')
+        document.body.classList.remove("no-overflow")
         resolve()
       }, duration)
     })
@@ -33,7 +33,7 @@ class Spinner extends React.Component {
   render() {
     return (
       <div
-        className={`spinner-container ${this.state.spin ? 'show' : ''}`}
+        className={`spinner-container ${this.state.spin ? "show" : ""}`}
         id="spinner"
       >
         <div className="spinner">

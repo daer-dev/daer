@@ -1,11 +1,11 @@
-import React from 'react'
-import { ThemeProvider } from '../../context'
-import Navigation from 'components/navigation'
-import ScrollLock from 'react-scrolllock'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'scss/retro.scss'
+import React from "react"
+import { ThemeProvider } from "../../context"
+import Navigation from "components/navigation"
+import ScrollLock from "react-scrolllock"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "scss/retro.scss"
 
-var scrollToElement = require('scroll-to-element')
+var scrollToElement = require("scroll-to-element")
 
 class Layout extends React.Component {
   constructor(props) {
@@ -18,10 +18,10 @@ class Layout extends React.Component {
       width: 0,
     }
     this.sections = [
-      'home',
-      'about',
-      'follow_me',
-      'contact',
+      "home",
+      "about",
+      "follow_me",
+      "contact",
     ]
     this.section_id = 0
     this.scrolling = false
@@ -48,7 +48,7 @@ class Layout extends React.Component {
 
   setDefaults() {
     this.setState({
-      height: window.innerWidth < 992 ? 'auto' : window.innerHeight,
+      height: window.innerWidth < 992 ? "auto" : window.innerHeight,
       mobile: window.innerWidth < 992 ? true : false,
       scrolllock: window.innerWidth < 1025 ? false : true,
       width: window.innerWidth,
@@ -57,11 +57,11 @@ class Layout extends React.Component {
 
   componentDidMount() {
     this.setDefaults()
-    window.addEventListener('resize', this.updateDimensions)
+    window.addEventListener("resize", this.updateDimensions)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions)
+    window.removeEventListener("resize", this.updateDimensions)
   }
 
   changeSection(id) {
@@ -89,9 +89,9 @@ class Layout extends React.Component {
 
       scrollToElement(el, {
         offset: 0,
-        ease: 'in-out-expo',
+        ease: "in-out-expo",
         duration: 2000,
-      }).on('end', () => {
+      }).on("end", () => {
         this.scrolling = false
       })
     }
@@ -102,7 +102,7 @@ class Layout extends React.Component {
 
     return (
       <ThemeProvider
-        value={{ height: this.state.mobile ? 'auto' : this.state.height }}
+        value={{ height: this.state.mobile ? "auto" : this.state.height }}
       >
         <Navigation change={this.changeSection} />
         <div onWheel={e => this.wheel(e)}>{children}</div>

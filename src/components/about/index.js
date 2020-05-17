@@ -1,9 +1,9 @@
-import React from 'react'
-import Particles from 'react-particles-js'
-import { Row, Col } from 'react-bootstrap'
-import ThemeContext from '../../context'
-import './styles.scss'
-import Text from './text.yml'
+import React from "react"
+import Particles from "react-particles-js"
+import { Row, Col } from "react-bootstrap"
+import ThemeContext from "../../context"
+import "./styles.scss"
+import Text from "./text.yml"
 
 class Hero extends React.Component {
   static contextType = ThemeContext
@@ -16,11 +16,11 @@ class Hero extends React.Component {
           <Col md={6} className="content">
             <div className="content-text">
               {this.title()}
-              {this.first_page()}
+              {this.firstPage()}
             </div>
           </Col>
           <Col md={6} className="content">
-            {this.second_page()}
+            {this.secondPage()}
           </Col>
         </Row>
       </section>
@@ -67,7 +67,7 @@ class Hero extends React.Component {
     )
   }
 
-  first_page() {
+  firstPage() {
     return (
       <div>
         <p>{Text.first_page.first_paragraph}</p>
@@ -75,7 +75,7 @@ class Hero extends React.Component {
     )
   }
 
-  second_page() {
+  secondPage() {
     return (
       <div>
         <p>{Text.second_page.first_paragraph}</p>

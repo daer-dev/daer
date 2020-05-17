@@ -1,15 +1,19 @@
 title: Follow me
 subtitle: Social media
 intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non pro
+
 social_media:
+
   github:
     title: Github
     url: https://www.google.com
     text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+
   linkedin:
     title: Linkedin
     url: https://www.google.com
     text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+
   twitter:
     title: Twitter
     url: https://www.google.com

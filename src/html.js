@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 export default class HTML extends React.Component {
   render() {
     return (
@@ -14,7 +14,7 @@ export default class HTML extends React.Component {
 
           <link href="/img/favicon.ico" rel="icon" />
         </head>
-        <body style={{ padding: '0px !important' }} className="no-overflow">
+        <body style={{ padding: "0px !important" }} className="no-overflow">
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

@@ -1,10 +1,10 @@
-import React from 'react'
-import './styles.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
-import Text from './text.yml'
+import React from "react"
+import "./styles.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
+import Text from "./text.yml"
 
-var scrollToElement = require('scroll-to-element')
+var scrollToElement = require("scroll-to-element")
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -41,9 +41,9 @@ class Navigation extends React.Component {
 
     scrollToElement(el, {
       offset: 0,
-      ease: 'in-out-expo',
+      ease: "in-out-expo",
       duration: 2000
-    }).on('end', () => {
+    }).on("end", () => {
       this.props.change(v)
     });
   }

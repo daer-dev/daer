@@ -1,9 +1,15 @@
 title: Contact
 subtitle: Get in touch
 intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+
 form:
   name: Name
   email: Email
-  phone: Phone
   message: Message
   submit: Send message
+
+messages:
+  success: Thanks for reaching me, I"ll answer as soon as I can!
+  error:
+    request: Ooops! There was an error with your request. Please, try again later.
+    validation: Please, fill all the required fields.

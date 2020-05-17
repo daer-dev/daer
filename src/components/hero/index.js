@@ -1,13 +1,13 @@
-import React from 'react'
-import './styles.scss'
-import { StaticQuery, graphql } from 'gatsby'
-import { Row, Col } from 'react-bootstrap'
-import Glitch from 'components/vendor/glitch'
-import Typewriter from 'typewriter-effect'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
-import ThemeContext from '../../context'
-import Text from './text.yml'
+import React from "react"
+import "./styles.scss"
+import { StaticQuery, graphql } from "gatsby"
+import { Row, Col } from "react-bootstrap"
+import Glitch from "components/vendor/glitch"
+import Typewriter from "typewriter-effect"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import ThemeContext from "../../context"
+import Text from "./text.yml"
 
 class Hero extends React.Component {
   static contextType = ThemeContext
@@ -18,7 +18,7 @@ class Hero extends React.Component {
         <Row>
           <Col md={12} className="profile">
             {this.profile()}
-            {this.scroll_indicator()}
+            {this.scrollIndicator()}
             {this.icons()}
           </Col>
         </Row>
@@ -53,7 +53,7 @@ class Hero extends React.Component {
         <img src={value.node.childImageSharp.fluid.src}
           className={
             `animated fadeIn move-${
-              Math.floor(Math.random() * 10) % 2 === 0 ? 'up' : 'down'
+              Math.floor(Math.random() * 10) % 2 === 0 ? "up" : "down"
             } float-image`
           }
           style={
@@ -71,7 +71,7 @@ class Hero extends React.Component {
     })
   }
 
-  scroll_indicator() {
+  scrollIndicator() {
     return (
       <div className="scroll-indicator content-text hidden-xs">
         {Text.scroll_indicator} <FontAwesomeIcon icon={faArrowDown} />

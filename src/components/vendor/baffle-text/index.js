@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import Baffle from "baffle-react";
-import handleViewport from 'react-in-viewport'
+import handleViewport from "react-in-viewport"
 
 class Baffle_Text extends React.Component {
   constructor(props) {

@@ -1,12 +1,12 @@
-import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
-import BaffleText from 'components/vendor/baffle-text'
-import AnimationContainer from 'components/vendor/animation-container'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import ThemeContext from '../../context'
-import './styles.scss'
-import Text from './text.yml'
+import React from "react"
+import { Row, Col, Container } from "react-bootstrap"
+import BaffleText from "components/vendor/baffle-text"
+import AnimationContainer from "components/vendor/animation-container"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import ThemeContext from "../../context"
+import "./styles.scss"
+import Text from "./text.yml"
 
 class FollowMe extends React.Component {
   constructor(props) {
@@ -35,9 +35,9 @@ class FollowMe extends React.Component {
           className="top"
           style={{
             maxHeight:
-              this.context.height !== 'auto'
+              this.context.height !== "auto"
                 ? this.context.height * 0.8
-                : 'inherit',
+                : "inherit",
           }}
         >
           <div className="content">
@@ -48,9 +48,9 @@ class FollowMe extends React.Component {
                 className="social-media-container"
                 style={{
                   minHeight:
-                    this.context.height !== 'auto'
+                    this.context.height !== "auto"
                       ? this.context.height * 0.6
-                      : 'inherit',
+                      : "inherit",
                 }}
               >
                 <Container>
@@ -59,7 +59,7 @@ class FollowMe extends React.Component {
                   </Row>
 
                   <Row>
-                    {this.social_media()}
+                    {this.socialMedia()}
                   </Row>
                 </Container>
               </div>
@@ -100,7 +100,7 @@ class FollowMe extends React.Component {
     )
   }
 
-  social_media() {
+  socialMedia() {
     return (
       <React.Fragment>
         <Col md={4} className="social-media">

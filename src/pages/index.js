@@ -1,12 +1,12 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
-import Layout from 'components/layout'
-import Spinner from 'components/vendor/spinner'
-import Hero from 'components/hero'
-import About from 'components/about'
-import FollowMe from 'components/follow_me'
-import Contact from 'components/contact'
+import React from "react"
+import { graphql } from "gatsby"
+import Helmet from "react-helmet"
+import Layout from "components/layout"
+import Spinner from "components/vendor/spinner"
+import Hero from "components/hero"
+import About from "components/about"
+import FollowMe from "components/follow_me"
+import Contact from "components/contact"
 
 class HomePage extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class HomePage extends React.Component {
         <Helmet>
           <title>{site.meta.title}</title>
           <meta name="description" content={site.meta.description} />
-          <script>{typeof window !== 'undefined' && window.history.pushState("", "", "/")}</script>
+          <script>{typeof window !== "undefined" && window.history.pushState("", "", "/")}</script>
         </Helmet>
         <Layout>
           <Hero id="home" />

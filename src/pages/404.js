@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import 'scss/retro.scss'
-import Text from './404/text.yml'
+import React from "react"
+import { Link } from "gatsby"
+import Helmet from "react-helmet"
+import "scss/retro.scss"
+import Text from "./404/text.yml"
 
 class page404 extends React.Component {
   render() {
