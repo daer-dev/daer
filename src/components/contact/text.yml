@@ -1,6 +1,6 @@
 title: Contact
 subtitle: Get in touch
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+intro: Send me a message if you want to talk about anything dev-related. I can't promise I'll answer to anything else, but it'll be more likely if you send me a joke or a discount code!
 
 form:
   name: Name
@@ -9,7 +9,7 @@ form:
   submit: Send message
 
 messages:
-  success: Thanks for reaching me, I"ll answer as soon as I can!
+  success: Thanks for reaching me, I'll answer as soon as I can!
   error:
     request: Ooops! There was an error with your request. Please, try again later.
     validation: Please, fill all the required fields.

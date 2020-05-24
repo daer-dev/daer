@@ -50,7 +50,7 @@ class Navigation extends React.Component {
 
   render() {
     return(
-      <div>
+      <React.Fragment>
         <div className="opener">
           <FontAwesomeIcon icon={faBars} className="closeNav" onClick={() => this.setState({show: true})} />
         </div>
@@ -65,7 +65,7 @@ class Navigation extends React.Component {
             </ul>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 

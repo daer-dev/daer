@@ -1,20 +1,20 @@
 title: Follow me
 subtitle: Social media
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non pro
+intro: If what you read so far sounds good to you, you can continue knowing me checking out my social media.
 
 social_media:
 
   github:
     title: Github
-    url: https://www.google.com
-    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+    url: https://github.com/daerd
+    text:  Playing with new technologies, contributing to open source repos and working on pet projects are among my hobbies. I publish all my code in Github in case anyone wants to benefit from it.
 
   linkedin:
     title: Linkedin
-    url: https://www.google.com
-    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+    url: https://www.linkedin.com/in/danielherrero1/
+    text: My professional profile, as a substitute of the classic CV. If you are curious about the places I worked on this is where you have to look.
 
   twitter:
     title: Twitter
-    url: https://www.google.com
-    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi. In et sem libero.
+    url: https://twitter.com/daerd_
+    text: I'm always on learning mode and Twitter is my way to discover new topics to focus on. I share anything I consider interesting in my account so others can do the same.

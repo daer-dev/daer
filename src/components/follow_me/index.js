@@ -101,48 +101,58 @@ class FollowMe extends React.Component {
   }
 
   socialMedia() {
-    return (
-      <React.Fragment>
-        <Col md={4} className="social-media">
-          <AnimationContainer delay={200} animation="fadeInLeft fast">
-            <a href={Text.social_media.github.url}>
-              <div className="icon">
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
-              <h4>{Text.social_media.github.title}</h4>
-            </a>
+    var blocks = []
+    var data = [
+      {
+        animation: "fadeInLeft",
+        cssClass: "",
+        icon: faGithub,
+        url: Text.social_media.github.url,
+        title: Text.social_media.github.title,
+        text: Text.social_media.github.text
+      },
+      {
+        animation: "fadeInDown",
+        cssClass: "border-side",
+        icon: faLinkedin,
+        url: Text.social_media.linkedin.url,
+        title: Text.social_media.linkedin.title,
+        text: Text.social_media.linkedin.text
+      },
+      {
+        animation: "fadeInRight",
+        cssClass: "",
+        icon: faTwitter,
+        url: Text.social_media.twitter.url,
+        title: Text.social_media.twitter.title,
+        text: Text.social_media.twitter.text
+      }
+    ]
 
-            <p>{Text.social_media.github.text}</p>
-          </AnimationContainer>
-        </Col>
+      for (var i = 0; i < data.length; i++) {
+        blocks.push(
+          <Col md={4} className={"social-media " + data[i].cssClass}>
+            <AnimationContainer delay={200} animation={data[i].animation + " fast"}>
+              <Row>
+                <Col xs={4} md={12}>
+                  <a href={data[i].url}>
+                    <div className="icon">
+                      <FontAwesomeIcon icon={data[i].icon} />
+                    </div>
+                    <h4>{data[i].title}</h4>
+                  </a>
+                </Col>
 
-        <Col md={4} className="social-media border-side">
-          <AnimationContainer delay={400} animation="fadeInDown fast">
-            <a href={Text.social_media.linkedin.url}>
-              <div className="icon">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </div>
-              <h4>{Text.social_media.linkedin.title}</h4>
-            </a>
+                <Col xs={8} md={12}>
+                  <p>{data[i].text}</p>
+                </Col>
+              </Row>
+            </AnimationContainer>
+          </Col>
+        )
+    }
 
-            <p>{Text.social_media.linkedin.text}</p>
-          </AnimationContainer>
-        </Col>
-
-        <Col md={4} className="social-media">
-          <AnimationContainer delay={600} animation="fadeInRight fast">
-            <a href={Text.social_media.twitter.url}>
-              <div className="icon">
-                <FontAwesomeIcon icon={faTwitter} />
-              </div>
-              <h4>{Text.social_media.twitter.title}</h4>
-            </a>
-
-            <p>{Text.social_media.twitter.text}</p>
-          </AnimationContainer>
-        </Col>
-      </React.Fragment>
-    )
+    return <React.Fragment>{blocks}</React.Fragment>
   }
 }
 

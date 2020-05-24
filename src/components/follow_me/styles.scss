@@ -33,6 +33,10 @@
 
       .intro {
         margin-bottom: 40px;
+
+        p {
+          text-align: center;
+        }
       }
 
       .social-media-container {
@@ -50,9 +54,8 @@
           }
 
           .social-media {
-            text-align: center;
-            margin: 20px 0px;
-            padding: 0 40px;
+            margin: 10px 0px;
+            padding: 0 20px;
 
             @media (max-width: 991px) {
               padding: 0;
@@ -69,16 +72,12 @@
             }
 
             a {
+              text-align: center;
+
               &:hover,
               &:active,
               &:focus {
                 text-decoration: none;
-              }
-
-              @media (max-width: 991px) {
-                float: left;
-                margin: 15px 15px 15px 0;
-                width: 75px;
               }
 
               .icon svg {
@@ -96,7 +95,9 @@
             }
 
             p {
-              margin-top: 25px
+              @media (min-width: 991px) {
+                margin-top: 25px;
+              }
             }
           }
         }

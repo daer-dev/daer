@@ -13,14 +13,14 @@ class Hero extends React.Component {
       <section id={`${this.props.id}`} className="about" style={{height: this.context.height}}>
         {this.particles()}
         <Row>
-          <Col md={6} className="content">
+          <Col md={6} className="content remote">
             <div className="content-text">
               {this.title()}
-              {this.firstPage()}
+              {this.renderHtml(Text.remote)}
             </div>
           </Col>
-          <Col md={6} className="content">
-            {this.secondPage()}
+          <Col md={6} className="content profile">
+            {this.renderHtml(Text.profile)}
           </Col>
         </Row>
       </section>
@@ -57,7 +57,7 @@ class Hero extends React.Component {
 
   title() {
     return (
-      <div>
+      <div class="title">
         <div className="line-text">
           <h4>{Text.title}</h4>
         </div>
@@ -67,20 +67,13 @@ class Hero extends React.Component {
     )
   }
 
-  firstPage() {
-    return (
-      <div>
-        <p>{Text.first_page.first_paragraph}</p>
-      </div>
-    )
-  }
+  renderHtml(html) {
+    const content = ({ __html: html });
 
-  secondPage() {
     return (
-      <div>
-        <p>{Text.second_page.first_paragraph}</p>
-        <p>{Text.second_page.second_paragraph}</p>
-      </div>
+      <React.Fragment>
+        <div dangerouslySetInnerHTML={content} />
+      </React.Fragment>
     )
   }
 }
