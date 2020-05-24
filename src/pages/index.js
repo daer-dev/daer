@@ -13,20 +13,22 @@ class HomePage extends React.Component {
     const { site } = this.props.data
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>{site.meta.title}</title>
           <meta name="description" content={site.meta.description} />
           <script>{typeof window !== "undefined" && window.history.pushState("", "", "/")}</script>
         </Helmet>
+
         <Layout>
           <Hero id="home" />
           <About id="about" />
           <FollowMe id="follow_me" />
           <Contact id="contact" />
         </Layout>
+
         <Spinner duration={1000} />
-      </div>
+      </React.Fragment>
     )
   }
 }

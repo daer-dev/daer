@@ -4,13 +4,13 @@ import "animate.css/animate.css"
 
 class Animation_Container extends React.Component {
   constructor(props) {
-      super(props)
+    super(props)
 
-      this.state = {
-        inViewport: false,
-        animation_complete: false,
-        classChanged: false,
-      }
+    this.state = {
+      inViewport: false,
+      animation_complete: false,
+      classChanged: false,
+    }
   }
 
   componentDidUpdate() {

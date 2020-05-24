@@ -7,10 +7,11 @@ import Text from "./404/text.yml"
 class page404 extends React.Component {
   render() {
     return(
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>{Text.title}</title>
         </Helmet>
+
         <div className="error-404">
           <div>
             <h1>{Text.title}</h1>
@@ -18,7 +19,7 @@ class page404 extends React.Component {
             <Link to="/">{Text.home_link}</Link>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

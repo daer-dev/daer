@@ -4,27 +4,28 @@ import handleViewport from "react-in-viewport"
 
 class Baffle_Text extends React.Component {
   constructor(props) {
-      super(props)
-      this.state = {
-          value: 0,
-          inViewport: false,
-          animation_complete: false,
-          obfuscate: true,
-          force: false
-      }
+    super(props)
+
+    this.state = {
+      value: 0,
+      inViewport: false,
+      animation_complete: false,
+      obfuscate: true,
+      force: false
+    }
   }
 
   componentDidUpdate() {
-      if (this.state.inViewport !== this.props.inViewport && !this.state.animation_complete) {
-        this.setState({ inViewport: this.props.inViewport })
-        this.setState({ animation_complete: true })
-        this.setState({ obfuscate: false })
-        this.forceUpdate()
+    if (this.state.inViewport !== this.props.inViewport && !this.state.animation_complete) {
+      this.setState({ inViewport: this.props.inViewport })
+      this.setState({ animation_complete: true })
+      this.setState({ obfuscate: false })
+      this.forceUpdate()
 
-        if (this.props.callMethodTime) {
-          this.parentMethod()
-        }
+      if (this.props.callMethodTime) {
+        this.parentMethod()
       }
+    }
   }
 
   forceUpdate() {
@@ -37,6 +38,7 @@ class Baffle_Text extends React.Component {
 
   parentMethod() {
     const { callMethodTime } = this.props
+
     setTimeout(() => {
       this.props.parentMethod()
     }, callMethodTime);

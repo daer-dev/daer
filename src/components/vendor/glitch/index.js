@@ -12,4 +12,5 @@ class Glitch extends React.Component {
     )
   }
 }
+
 export default Glitch
